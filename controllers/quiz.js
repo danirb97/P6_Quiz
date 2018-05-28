@@ -242,7 +242,6 @@ exports.randomplay = (req, res, next) => {
         .then(quiz => {
 
             if (quiz) {
-                req.session.quizzesPlayed.push(quiz.id);
                 res.render('quizzes/random_play', {
                     score,
                     quiz
@@ -269,6 +268,7 @@ exports.randomcheck = (req, res, next) => {
         .then(quiz => {
 
             if(quiz.answer === req.query['answer']) {
+                req.session.quizzesPlayed.push(quiz.id);
                 req.session.score++;
                 score = req.session.score;
                 req.session.result = true;
