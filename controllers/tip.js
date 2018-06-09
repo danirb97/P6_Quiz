@@ -77,3 +77,10 @@ exports.destroy = (req, res, next) => {
     .catch(error => next(error));
 };
 
+// GET  /quizzes/:quizId/tips/:tipId/edit
+// PUT  /quizzes/:quizId/tips/:tipId
+/*
+exports.adminOrAuthorRequired = (req, res, next) => {
+
+};
+*/
